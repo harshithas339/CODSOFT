@@ -1,19 +1,30 @@
-names = []
-contact_numbers = []
-num = int(input("Enter the total number of contacts you want to save: "))
-for i in range(num):
-    name = input("Name: ")
-    contact_number = int(input("Contact Number: "))
-    names.append(name)
-    contact_numbers.append(contact_number)
-print("\nName\t\t\tContact Number\n")
-for i in range(num):
-    print("{}\t\t\t{}".format(names[i], contact_numbers[i]))
-search_term = input("\nEnter search term: ")
-print("Search result:")
-if search_term in names:
-    index = names.index(search_term)
-    contact_number = contact_numbers[index]
-    print("Name: {}, Phone Number: {}".format(search_term, contact_number))
+def add(num1, num2):
+	return num1 + num2
+def subtract(num1, num2):
+	return num1 - num2
+def multiply(num1, num2):
+	return num1 * num2
+def divide(num1, num2):
+	return num1 / num2
+print("Select Operation -\n" \
+		"1. Add\n" \
+		"2. Subtract\n" \
+		"3. Multiply\n" \
+		"4. Divide\n")
+select = int(input("Select operations form 1, 2, 3, 4 :"))
+num1 = int(input("Enter first number: "))
+num2 = int(input("Enter second number: "))
+if select == 1:
+	print(num1, "+", num2, "=",
+					add(num1, num2))
+elif select == 2:
+	print(num1, "-", num2, "=",
+					subtract(num1, num2))
+elif select == 3:
+	print(num1, "*", num2, "=",
+					multiply(num1, num2))
+elif select == 4:
+	print(num1, "/", num2, "=",
+					divide(num1, num2))
 else:
-    print("No records")
+	print("Invalid Input")
